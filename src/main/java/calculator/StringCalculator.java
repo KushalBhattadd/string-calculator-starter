@@ -1,5 +1,8 @@
 package calculator;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class StringCalculator {
 
     public int add(String input)
@@ -14,10 +17,16 @@ class StringCalculator {
         }else {
             inputrf.append(input);
         }
+        boolean negFlag = false;
+        List<String> negList = new ArrayList<>();
         for ( String s : inputrf.toString().split("["+regex+"]" )){
-            if ( !s.isBlank() && Integer.parseInt(s) < 0 ) throw new IllegalArgumentException("negatives not allowed "+Integer.parseInt(s));
+            if ( !s.isBlank() && Integer.parseInt(s) < 0 ) {
+                negFlag = true;
+                negList.add(s+" ");
+            }
             sum += s.isBlank()? 0:  Integer.parseInt(s);
         }
+        if ( negFlag ) throw new IllegalArgumentException("negatives not allowed "+negList);
         return sum;
     }
 

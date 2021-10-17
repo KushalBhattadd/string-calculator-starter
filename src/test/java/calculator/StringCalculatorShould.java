@@ -40,6 +40,10 @@ class StringCalculatorShould {
             calc.add("1,-2");
         }, "negatives not allowed -2");
     }
-
-
+    @Test
+    void Calling_Add_with_a_Mutiple_negative_number_will_throw_an_exception() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            calc.add("1,-2,-3");
+        }, "negatives not allowed -2 -3");
+    }
 }
