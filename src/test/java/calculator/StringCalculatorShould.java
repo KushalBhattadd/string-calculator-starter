@@ -26,6 +26,10 @@ class StringCalculatorShould {
     void unknown_amount_of_numbers(){
         assertEquals(45,calc.add("1,2,3,4,5,6,7,8,9"));
     }
+    @Test
+    void handle_new_lines_between_numbers(){
+        assertEquals(6,calc.add("1\n2,3"));
+    }
 
 
 }
