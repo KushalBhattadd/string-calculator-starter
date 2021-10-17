@@ -60,4 +60,8 @@ class StringCalculatorShould {
     void Delimiters_can_be_of_any_length(){
         assertEquals(6,calc.add("//[***]\n1***2***3"));
     }
+    @Test
+    void Allow_multiple_delimiters(){
+        assertEquals(6,calc.add("//[*][%]\n1*2%3"));
+    }
 }
