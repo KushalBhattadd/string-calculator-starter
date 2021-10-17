@@ -56,4 +56,8 @@ class StringCalculatorShould {
     void Numbers_bigger_than_1000_should_be_ignored(){
         assertEquals(2,calc.add("1002,2"));
     }
+    @Test
+    void Delimiters_can_be_of_any_length(){
+        assertEquals(6,calc.add("//[***]\n1***2***3"));
+    }
 }
