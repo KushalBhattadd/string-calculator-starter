@@ -15,6 +15,7 @@ class StringCalculator {
             inputrf.append(input);
         }
         for ( String s : inputrf.toString().split("["+regex+"]" )){
+            if ( !s.isBlank() && Integer.parseInt(s) < 0 ) throw new IllegalArgumentException("negatives not allowed "+Integer.parseInt(s));
             sum += s.isBlank()? 0:  Integer.parseInt(s);
         }
         return sum;
