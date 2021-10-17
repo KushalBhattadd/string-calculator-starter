@@ -30,6 +30,10 @@ class StringCalculatorShould {
     void handle_new_lines_between_numbers(){
         assertEquals(6,calc.add("1\n2,3"));
     }
+    @Test
+    void Support_different_delimiters(){
+        assertEquals(3,calc.add("//;\n1;2"));
+    }
 
 
 }
