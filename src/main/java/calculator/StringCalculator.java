@@ -5,6 +5,10 @@ import java.util.List;
 
 class StringCalculator {
 
+   int addCalledCoutnt;
+    public StringCalculator(){
+        this.addCalledCoutnt=0;
+    }
     public int add(String input)
     {
         if ( input.length() == 0 ) return 0;
@@ -28,6 +32,10 @@ class StringCalculator {
         }
         if ( negFlag ) throw new IllegalArgumentException("negatives not allowed "+negList);
         return sum;
+    }
+
+    public int GetCalledCount(){
+        return addCalledCoutnt;
     }
 
 }
