@@ -28,7 +28,7 @@ class StringCalculator {
                 negFlag = true;
                 negList.add(s+" ");
             }
-            sum += s.isBlank()? 0:  Integer.parseInt(s);
+            sum += s.isBlank()? 0:  Integer.parseInt(s) <=1000 ? Integer.parseInt(s) : 0;
         }
         if ( negFlag ) throw new IllegalArgumentException("negatives not allowed "+negList);
         return sum;

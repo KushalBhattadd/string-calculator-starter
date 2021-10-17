@@ -52,4 +52,8 @@ class StringCalculatorShould {
     void GetCallCount_should_return_number_of_Count(){
         assertEquals(count-1, calc.GetCalledCount());
     }
+    @Test
+    void Numbers_bigger_than_1000_should_be_ignored(){
+        assertEquals(2,calc.add("1002,2"));
+    }
 }
