@@ -22,6 +22,10 @@ class StringCalculatorShould {
     void comma_separated_values_should_return_sum(){
         assertEquals(3, calc.add("1,2"));
     }
+    @Test
+    void unknown_amount_of_numbers(){
+        assertEquals(45,calc.add("1,2,3,4,5,6,7,8,9"));
+    }
 
-    
+
 }
